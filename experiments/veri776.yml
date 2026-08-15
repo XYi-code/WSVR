@@ -1,0 +1,47 @@
+CONFIG_NAME: 'VeRi'
+DATA_DIR: '/data/VeRi'
+OUTPUT_DIR: 'output/veri776/'
+WORKERS: 0
+PRINT_FREQ: 1
+
+DATASET:
+    DATASET: 'VeRi'
+    ROOT: '/data/'
+    CAM_NUM: 20
+    RE: 0.5
+MODEL:
+    NAME: 'resnet50'
+    PRETRAINED: ''
+    IMAGE_SIZE:
+    - 256
+    - 256
+    FEATURES: 2048
+    CLASSES: 0
+MLP:
+    TYPE: 'SMLC'
+WSVR:
+    TEMP: 0.07
+    K_CENTERS: 2
+    ALPHA_SCL: 0.5
+    LAMBDA_1: 0.2
+    LAMBDA_2: 1.0
+    T: 0.5
+    ICE_HARD_K: 16
+TRAIN:
+    BATCH_SIZE: 64
+    SHUFFLE: true
+    BEGIN_EPOCH: 0
+    END_EPOCH: 200
+    RESUME: false
+    CHECKPOINT: ''
+    OPTIMIZER: 'sgd'
+    LR: 0.01
+    LR_FACTOR: 0.1
+    LR_STEP: 40
+    WEIGHT_DECAY: 0.0005
+    MOMENTUM: 0.9
+    NESTEROV: true
+TEST:
+    BATCH_SIZE: 64
+    MODEL_FILE: '/output/veri776/V1/best_checkpoint.pth.tar'
+    OUTPUT_FEATURES: 'l2feat'

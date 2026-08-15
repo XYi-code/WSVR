@@ -1,0 +1,49 @@
+CONFIG_NAME: 'VehicleID'
+DATA_DIR: '/data/VehicleID'
+OUTPUT_DIR: 'output/vehicleID/test3_2400/'
+WORKERS: 0
+PRINT_FREQ: 1
+
+DATASET:
+    DATASET: 'VehicleID'
+    ROOT: 'data/VehicleID/image/'
+    CAM_NUM: 0
+    RE: 0.5
+    NAMES: 'VehicleID'
+    ROOT_DIR: '/data/VehicleID'
+
+MODEL: 
+    NAME: 'resnet50'
+    PRETRAINED: ''
+    IMAGE_SIZE:
+    - 256
+    - 256
+    FEATURES: 2048
+    CLASSES: 0
+MLP:
+    TYPE: 'SMLC'
+WSVR:
+    TEMP: 0.07
+    K_CENTERS: 2
+    ALPHA_SCL: 0.5
+    LAMBDA_1: 0.2
+    LAMBDA_2: 1.0
+    T: 0.5
+    ICE_HARD_K: 16
+TRAIN:
+    BATCH_SIZE: 64
+    SHUFFLE: true
+    BEGIN_EPOCH: 0
+    END_EPOCH: 30
+    RESUME: false
+    CHECKPOINT: ''
+    OPTIMIZER: 'sgd'
+    LR: 0.1
+    LR_FACTOR: 0.1
+    LR_STEP: 10
+    WEIGHT_DECAY: 0.0005
+    MOMENTUM: 0.9
+    NESTEROV: true
+TEST:
+    BATCH_SIZE: 32
+    MODEL_FILE: '/output/vehicleID/test3_2400/best_checkpoint.pth.tar'
