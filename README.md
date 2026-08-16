@@ -37,7 +37,7 @@ The recommended directory structure is:
 ```bash
 WSVR_code/
 ├── data/
-│   ├── VeRi-776/
+│   ├── VeRi/
 │   │   └── ...
 │   └── VehicleID/
 │       └── ...
@@ -73,7 +73,7 @@ Set the dataset root directory according to the location of your downloaded data
 
 For example:
 ```bash
-data_root: /path/to/your/data
+root: /path/to/your/data
 ```
 Please also check other configuration parameters in the YAML file before starting training.
 
@@ -119,4 +119,4 @@ The default configuration follows the experimental settings described in the man
 - Temperature parameter of 0.07
 - Exponential moving average for memory updating
 
-Please refer to the configuration for the exact implementation settings.
+Please refer to the paper for the exact implementation settings.
